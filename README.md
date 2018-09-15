@@ -28,7 +28,7 @@ Alphanumeric data should be stored in the following fields
 * Contact phone number (string)
 * Approved investigators (string [array])
 * Primary research ethics committee (string)
-* Reporting period (date to date; day and month only)
+* Reporting date (date; day and month only)
 
 ## Note on record status
 The status of the record reflects the status of the associated ethics application. ‘Active’ indicates that the ethics approval is in effect and that work may proceed on the projects covered by the approval, while ‘Inactive’ indicates that the ethics approval does not meet one or more vital dependency (e.g., the approval period has not yet commenced, the approval has expired, or a parent approval has lapsed). ‘Suspended’ indicates that the overseeing research ethics committee has suspended the approval, and ‘Closed’ indicates that all projects covered by the ethics approval have been completed.  
