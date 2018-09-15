@@ -47,4 +47,12 @@ function add_project_to_db($details) {
 	//$user = get_current_user_id();
 
 }
+add_filter( 'caldera_forms_upload_directory', function( $dir, $field_id, $form_id ){
+	$field = Caldera_Forms_Field_Util::get_field( $field_id, Caldera_Forms_Forms::get_form(  $form_id ) );
+	if ( is_array( $field ) ) {
+		$dir = sanitize_title( $field[ 'slug' ] );
+	}
+	return $dir;
+}, 10, 3  )
+
 ?>
