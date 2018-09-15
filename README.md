@@ -11,7 +11,9 @@ Ethics Tracker is, at heart, a content management system. The full product will 
 The following is a list of features that should be considered the minimum required to create a viable prototype.
 
 ## Database and record fields
-Each record stored in the database should be associated with a single ethics application. Records should have the capacity to store alphanumeric data as well as multiple small files (i.e., documents). When attaching a document to a record, the user must specify the class of document (‘Application’, ‘Policy’, ‘Approval’, ‘Modification’, ‘Progress report’, ‘Closure report’, ‘Incident report’, ‘Form’, ‘Finance’, ‘Material transfer agreement’, ‘Memorandum of understanding’, ‘Publication’, ‘Suspension’, ‘Other’), and may provide an accompanying description. The system should also query the user to supply a ‘filing date’ so that documents can be organised chronologically.
+Each record stored in the database should be associated with a single ethics application. Records should have the capacity to store alphanumeric data as well as multiple small files (i.e., documents). Supported file attachment types should include .BMP, .CSV, .DOC, .DOCX, .HTM, .HTML, .JPG, .LOG, .MSG, .ODS, .ODT, .PDF, .PNG, .PPT, .PPTX, .RTF, .TGA, .TIF, .TIFF, .TXT, .XLS, .XLSX and .XML.
+
+When attaching a document to a record, the user must specify the class of document (‘Application’, ‘Policy’, ‘Approval’, ‘Modification’, ‘Progress report’, ‘Closure report’, ‘Incident report’, ‘Form’, ‘Finance’, ‘Material transfer agreement’, ‘Memorandum of understanding’, ‘Publication’, ‘Suspension’, ‘Other’), and may provide an accompanying description. The system should also query the user to supply a ‘filing date’ so that documents can be organised chronologically.
 
 Alphanumeric data should be stored in the following fields 
 * Identifier code (string)
