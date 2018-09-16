@@ -156,7 +156,7 @@ function et_edit_application_form( $form ) {
         "WHERE id=".$app_id);
     $results = $results[0];
 
-    var_dump($results);
+    var_dump($form);
 
     //foreach ($form['fields'] as $key => $element) {
 
