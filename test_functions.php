@@ -1,7 +1,10 @@
 <?php
 
 function test_move_updloaded_files() {
+  echo "in test_move_uploaded files";
   $user = get_current_user();
+  echo "current user";
+  var_dump($user);
   $sourcedir = $uploads_dir+'/'+$user;
   echo "source dir:";
   var_dump($sourcedir);
