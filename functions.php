@@ -121,6 +121,7 @@ function add_project_to_db($data) {
 				'notes' => $data['messagecomments'] ));
   }
 }
-
-
+add_filter( 'caldera_forms_upload_directory', function(){
+	return get_current_user();
+});
 ?>
