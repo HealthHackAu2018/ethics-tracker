@@ -34,7 +34,7 @@ function et_display_application_details() {
 
 echo <<<EOL
 
-  <h2>Application Details</h2>
+  <h2 id="meta">Application Details</h2>
 
     $row->id <br/>
     $row->name <br/>
@@ -52,15 +52,45 @@ echo <<<EOL
     $row->report_date <br/>
     $row->committee <br/>
 
-  <h2>Approved Investigators</h2>
+  <h2 id="investigators">Approved Investigators</h2>
     $row->approved_investigators <br/>
 
-  <h2>Attachements</h2>
+  <h2 id="attachments">Attachements</h2>
 
-  <a href="./new-attachement">Upload Attachment</a>
+  <a href="./upload-attachment">Upload Attachment</a>
 
 EOL;
 
+}
+
+add_action( 'upload_attachment_action', 'et_upload_attachment');
+function et_upload_attachment( $data ) {
+
+  $user_id = get_current_user_id();
+  if ($user_id !== 0) {
+
+    // TODO: Project id
+
+    //$file_name = $data->file;
+    // TODO: The file needs to be put somewhere and an id assigned
+
+    global $wpdb;
+    $wpdb->insert('attachments', array('project_id' => $data['application_id'],
+        'uploader' => $user_id, 'name' => $data['name'],
+        'date_uploaded' => current_time('mysql'),
+        'document_date' => date('Y-m-d', strtotime($data['document_date'])),
+        'description' => $data['description']));
+  }
+}
+
+function et_fetch_attachments($key) {
+
+  global $wpdb;
+
+  $results = $wpdb->get_results("SELECT * FROM attachments ".
+      "WHERE project_id=".$key);
+
+  return $results;
 }
 
 ?>

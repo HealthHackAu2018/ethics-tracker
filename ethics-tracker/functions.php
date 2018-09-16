@@ -102,9 +102,6 @@ add_action('add_project_to_db_action', 'add_project_to_db');
 function add_project_to_db($data) {
 	$user_id = get_current_user_id();
   if ($user_id != 0) {
-
-    // TODO: Project id
-
 		global $wpdb;
 	  $wpdb->insert('projects', array('id' => $data['approval_number'],
 				'name' => $data['project_name'],
@@ -124,5 +121,6 @@ function add_project_to_db($data) {
 				'notes' => $data['messagecomments'] ));
   }
 }
+
 
 ?>

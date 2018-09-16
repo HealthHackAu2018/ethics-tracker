@@ -82,5 +82,4 @@ function run_ethics_tracker() {
 run_ethics_tracker();
 
 include 'functions.php';
-include 'isaacfunctions.php';
-test_create_tables();
+
