@@ -160,10 +160,13 @@ function et_edit_application_form( $form ) {
 
       if ($element['slug'] == 'project_name') {
         $element['config']['default'] = 'testtesttest';
+        var_dump($element);
       }
     }
 
   }
+
+  return $form;
 
 }
 
