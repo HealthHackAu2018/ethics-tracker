@@ -137,7 +137,7 @@ function move_uploaded_attachment($data) {
     if (is_dir($sourcedir)){
       if ($dh = opendir($sourcedir)){
         while (($file = readdir($dh)) !== false){
-           move_uploaded_file("${sourcedir}/${file}","${destdir}/${file}");
+           rename("${sourcedir}/${file}","${destdir}/${file}");
         }
         closedir($dh);
       }
