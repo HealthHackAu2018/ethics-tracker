@@ -22,7 +22,7 @@ function test_move_updloaded_files() {
         while (($file = readdir($dh)) !== false){
           echo "file";
           var_dump($file);
-           move_uploaded_file("${sourcedir}/${file}","${destdir}/${file}");
+           rename("${sourcedir}/${file}","${destdir}/${file}");
         }
         closedir($dh);
       }
