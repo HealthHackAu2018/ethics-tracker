@@ -50,10 +50,7 @@ class Ethics_Tracker_Activator {
 			report_date date DEFAULT NULL,
 			approved_investigators varchar(1000) DEFAULT NULL,
 			committee varchar(100) DEFAULT NULL,
-<<<<<<< HEAD
 			notes varchar(1000) DEFAULT NULL,
-=======
->>>>>>> 9c647b49db94a81ac0445a89e78cc2944e272f3a
 			PRIMARY KEY (id)
 		) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
