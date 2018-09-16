@@ -51,6 +51,7 @@ class Ethics_Tracker_Activator {
 			approved_investigators varchar(1000) DEFAULT NULL,
 			committee varchar(100) DEFAULT NULL,
 			notes varchar(1000) DEFAULT NULL,
+			dependents varchar(2000) DEFAULT NULL,
 			PRIMARY KEY (id)
 		) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
