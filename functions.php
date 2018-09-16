@@ -121,6 +121,24 @@ function add_project_to_db($data) {
 				'notes' => $data['messagecomments'] ));
   }
 }
+
+// Move uploaded attachments to project directory for user
+function move_uploaded_attachment($data) {
+  $user = get_current_user();
+  $sourcedir = $uploads_dir+'/'+$user;
+  $destdir = $sourcedir+'/'+$data['approval_number'];
+  if (wp_mkdir_p( $uploads_dir+'/'+$user+'/'+$data['approval_number'] )) {
+    if (is_dir($sourcedir)){
+      if ($dh = opendir($sourcedir)){
+        while (($file = readdir($dh)) !== false){
+           move_uploaded_file($sourcedir+'/'+$file,$destdir+'/'+$file);
+        }
+        closedir($dh);
+      }
+    }
+  }
+}
+
 add_filter( 'caldera_forms_upload_directory', function(){
 	return get_current_user();
 });
