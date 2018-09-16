@@ -79,6 +79,7 @@ function et_upload_attachment( $data ) {
     global $wpdb;
     $wpdb->insert('attachments', array('project_id' => $data['application_id'],
         'uploader' => $user_id, 'name' => $data['name'],
+        'class' => $data['document_type'],
         'date_uploaded' => current_time('mysql'),
         'document_date' => date('Y-m-d', strtotime($data['document_date'])),
         'description' => $data['description']));
