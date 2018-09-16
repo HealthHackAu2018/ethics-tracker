@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @link              kiaradavison.com
  * @since             1.0.0
  * @package           Ethics_Tracker
+ * @copyright         2018 Health Hack AU
  *
  * @wordpress-plugin
  * Plugin Name:       EthicsTracker
  * Plugin URI:        https://smallprojects.info/ethics/
  * Description:       Provides php code that powers the ethics-tracker website.
  * Version:           1.0.0
- * Author:            Kiara Davison
- * Author URI:        kiaradavison.com
+ * Author:            EthicsTracker Team
+ * Author URI:        http://github.com/HealthHackAu2018/ethics-tracker
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * GitHub Plugin URI: HealthHackAu2018/ethics-tracker
