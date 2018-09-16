@@ -128,13 +128,15 @@ function add_project_to_db($data) {
 // Move uploaded attachments to project directory for user
 function move_uploaded_attachment($data) {
   $user = get_current_user();
-  $sourcedir = $uploads_dir+'/'+$user;
-  $destdir = $sourcedir+'/'+$data['approval_number'];
-  if (wp_mkdir_p( $uploads_dir+'/'+$user+'/'+$data['approval_number'] )) {
+  $uploads_dir = wp_upload_dir()['basedir'];
+  $sourcedir = "${uploads_dir}/${user}";
+  $subdir = $data['approval_number'];
+  $destdir = "${sourcedir}/${subdir}";
+  if (wp_mkdir_p( $destdir )) {
     if (is_dir($sourcedir)){
       if ($dh = opendir($sourcedir)){
         while (($file = readdir($dh)) !== false){
-           move_uploaded_file($sourcedir+'/'+$file,$destdir+'/'+$file);
+           move_uploaded_file("${sourcedir}/${file}","${destdir}/${file}");
         }
         closedir($dh);
       }
