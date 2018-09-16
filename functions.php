@@ -118,7 +118,9 @@ function add_project_to_db($data) {
 				'report_date' => date('Y-m-d', strtotime($data['report_date'])),
 				'approved_investigators' => $data['approved_investigators'],
 				'committee' => $data['primary_research_ethics_comittee'],
-				'notes' => $data['messagecomments'] ));
+        'notes' => $data['messagecomments'] ));
+
+        move_uploaded_attachment($data);
   }
 }
 
