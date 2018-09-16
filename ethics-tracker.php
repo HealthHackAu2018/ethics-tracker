@@ -1,26 +1,20 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              kiaradavison.com
  * @since             1.0.0
  * @package           Ethics_Tracker
+ * @copyright         2018 Health Hack AU
  *
  * @wordpress-plugin
  * Plugin Name:       EthicsTracker
  * Plugin URI:        https://smallprojects.info/ethics/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Provides php code that powers the ethics-tracker website.
  * Version:           1.0.0
- * Author:            Kiara Davison
- * Author URI:        kiaradavison.com
+ * Author:            EthicsTracker Team
+ * Author URI:        http://github.com/HealthHackAu2018/ethics-tracker
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * GitHub Plugin URI: HealthHackAu2018/ethics-tracker
  * Text Domain:       ethics-tracker
  * Domain Path:       /languages
  */
