@@ -5,6 +5,7 @@ function test_move_updloaded_files() {
   $user = get_current_user();
   echo "current user";
   var_dump($user);
+  $uploads_dir = wp_upload_dir();
   echo "uploads dir";
   var_dump($uploads_dir);
   $sourcedir = $uploads_dir+'/'+$user;
