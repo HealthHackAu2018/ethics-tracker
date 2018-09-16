@@ -151,13 +151,20 @@ function et_edit_application_form( $form ) {
   $app_id = $_GET["applicationid"];
   if (isset($app_id)) {
 
-    global $wpdb;
-    $results = $wpdb->get_results("SELECT * FROM projects ".
-        "WHERE id=".$app_id);
+    //global $wpdb;
+    //$results = $wpdb->get_results("SELECT * FROM projects ".
+    //    "WHERE id=".$app_id);
     //$results = $results[0];
 
-    var_dump($results);
+    //var_dump($results);
 
+    foreach ($form['fields'] as $key => $element) {
+
+      if ($element['slug'] == 'project_name') {
+        $form['fields'][$key]['config']['defaulg'] = 'testtesttest';
+      }
+
+    }
   }
 
 }
