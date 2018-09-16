@@ -1,16 +1,15 @@
 <?php
 
 function test_move_updloaded_files() {
-  echo "in test_move_uploaded files";
+  
   $user = get_current_user();
-  echo "current user";
-  var_dump($user);
+  
+  
   $uploads_dir = wp_upload_dir()['basedir'];
-  echo "uploads dir";
-  var_dump($uploads_dir);
+  
+  
   $sourcedir = "${uploads_dir}/${user}";
-  echo "source dir:";
-  var_dump($sourcedir);
+  
   $destdir = "${sourcedir}/testproject";
   echo "destination dir:";
   var_dump($destdir);
@@ -21,6 +20,8 @@ function test_move_updloaded_files() {
       if ($dh = opendir($sourcedir)){
           echo "opened dir";
         while (($file = readdir($dh)) !== false){
+          echo "file";
+          var_dump($file);
            move_uploaded_file("${sourcedir}/${file}","${destdir}/${file}");
         }
         closedir($dh);
