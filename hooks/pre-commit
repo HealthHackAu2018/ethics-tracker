@@ -5,7 +5,7 @@
 #
 #   git config core.hooksPath hooks
 
-cd $GIT_DIR
+cd `git rev-parse --show-toplevel`
 
 VERSION_NUM=`git log master --pretty=oneline | wc -l`
 

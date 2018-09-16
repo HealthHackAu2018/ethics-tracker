@@ -9,7 +9,7 @@
  * Plugin Name:       EthicsTracker
  * Plugin URI:        https://smallprojects.info/ethics/
  * Description:       Provides php code that powers the ethics-tracker website.
- * Version:           1.0.0
+ * Version:           0.0.20
  * Author:            EthicsTracker Team
  * Author URI:        http://github.com/HealthHackAu2018/ethics-tracker
  * License:           GPL-2.0+
