@@ -83,8 +83,9 @@ class Ethics_Tracker_Activator {
 			uploader varchar(100) NOT NULL,
 			name varchar(100) NOT NULL,
 			date_uploaded date NOT NULL,
-			document_date date,
-			description varchar(1000),
+			document_date date DEFAULT NULL,
+			description varchar(1000) DEFAULT NULL,
+			class varchar(200) DEFAULT NULL,
 			PRIMARY KEY (id)
 			) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
