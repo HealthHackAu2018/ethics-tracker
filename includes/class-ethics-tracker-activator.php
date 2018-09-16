@@ -54,7 +54,7 @@ class Ethics_Tracker_Activator {
 			PRIMARY KEY (id)
 		) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-		$result = dbDelta( $sql );
+		dbDelta( $sql );
 	}
 
 	static function setup_users_table($table_name) {
@@ -63,20 +63,13 @@ class Ethics_Tracker_Activator {
 	
 		$sql = "CREATE TABLE $table_name (
 			username varchar(100) NOT NULL,
-<<<<<<< HEAD
-			fullname varchar(100) NOT NULL,
-			password varchar(100) NOT NULL,
-			project_list varchar(1000) NOT NULL,
-=======
 			fullname varchar(100) DEFAULT NULL,
 			password varchar(100) DEFAULT NULL,
 			project_list varchar(1000) DEFAULT NULL,
->>>>>>> 9c647b49db94a81ac0445a89e78cc2944e272f3a
 			PRIMARY KEY (username)
 			) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
-<<<<<<< HEAD
 	}
 
 	static function setup_attachments_table($table_name) {
@@ -95,8 +88,6 @@ class Ethics_Tracker_Activator {
 			) $charset_collate;";
 		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
-=======
->>>>>>> 9c647b49db94a81ac0445a89e78cc2944e272f3a
 	}
 
 	// Setup database tables if they do not exist
@@ -113,15 +104,11 @@ class Ethics_Tracker_Activator {
 			//table not in database. Create new table
 			self::setup_users_table($table_name);
 		}
-<<<<<<< HEAD
 		$table_name = 'attachments';
 		if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
 			//table not in database. Create new table
 			self::setup_attachments_table($table_name);
 		}
-=======
-		
->>>>>>> 9c647b49db94a81ac0445a89e78cc2944e272f3a
 	}
 	public static function activate() {
 		self::setup_database_tables();
