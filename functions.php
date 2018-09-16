@@ -158,15 +158,11 @@ function et_edit_application_form( $form ) {
 
     foreach ($form['fields'] as $key => $element) {
 
-      var_dump($key);
-      var_dump($element);
-
-      echo '<br/>';
+      if ($element['slug'] == 'project_name') {
+        $element['config']['default'] = 'testtesttest';
+      }
     }
 
-    //  if ($element['slug'] == 'project_name') {
-    //    $form['fields'][$key]['config']['defaulg'] = 'testtesttest';
-    //  }
   }
 
 }
