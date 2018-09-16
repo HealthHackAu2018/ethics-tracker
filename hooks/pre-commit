@@ -1,0 +1,17 @@
+#!/bin/sh
+# Hook to update the version number
+#
+# Setup this hook with:
+#
+#   git config core.hooksPath hooks
+
+cd $GIT_DIR
+
+VERSION_NUM=`git log master --pretty=oneline | wc -l`
+
+
+sed "s/* Version.*/* Version:           0.0.${VERSION_NUM}/" ethics-tracker.php > ethics-tracker.php.new
+mv ethics-tracker.php.new ethics-tracker.php
+
+git add ethics-tracker.php
+
