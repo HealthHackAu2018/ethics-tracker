@@ -145,6 +145,23 @@ function move_uploaded_attachment($data) {
   }
 }
 
+add_action( 'caldera_forms_render_start', 'et_edit_application_form');
+function et_edit_application_form( $form ) {
+
+  $app_id = $_GET["applicationid"];
+  if (isset($app_id)) {
+
+    global $wpdb;
+    $results = $wpdb->get_results("SELECT * FROM projects ".
+        "WHERE id=".$app_id);
+    //$results = $results[0];
+
+    var_dump($results);
+
+  }
+
+}
+
 add_filter( 'caldera_forms_upload_directory', function(){
 	return get_current_user();
 });
