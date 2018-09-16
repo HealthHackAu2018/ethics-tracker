@@ -8,10 +8,10 @@ function test_move_updloaded_files() {
   $uploads_dir = wp_upload_dir()['basedir'];
   echo "uploads dir";
   var_dump($uploads_dir);
-  $sourcedir = $uploads_dir+'/'+$user;
+  $sourcedir = "${uploads_dir}/${user}";
   echo "source dir:";
   var_dump($sourcedir);
-  $destdir = $sourcedir+'/'+'testproject';
+  $destdir = "${sourcedir}/testproject";
   echo "destination dir:";
   var_dump($destdir);
   if (wp_mkdir_p( $destdir )) {
@@ -21,7 +21,7 @@ function test_move_updloaded_files() {
       if ($dh = opendir($sourcedir)){
           echo "opened dir";
         while (($file = readdir($dh)) !== false){
-           move_uploaded_file($sourcedir+'/'+$file,$destdir+'/'+$file);
+           move_uploaded_file("${sourcedir}/${file}","${destdir}/${file}");
         }
         closedir($dh);
       }
